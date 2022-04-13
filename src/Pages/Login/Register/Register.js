@@ -9,6 +9,7 @@ const Register = () => {
     }
     const handleRegister = (e) => {
         e.preventDefault();
+        console.log(e.target.email.value)
     }
     return (
         <div className='register-form'>
