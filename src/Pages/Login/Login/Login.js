@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -10,6 +12,12 @@ const Login = () => {
         e.preventDefault()
         console.log(emailRef.current.value, passwordRef.current.value)
     }
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
     const handleRegisterFromLogin = () => {
         navigate('/register')
     };
