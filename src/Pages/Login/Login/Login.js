@@ -8,16 +8,21 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(emailRef.current.value, passwordRef.current.value)
-    }
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value
+        signInWithEmailAndPassword(email, password)
+    }
+    if (user) {
+        navigate('/home')
+    }
     const handleRegisterFromLogin = () => {
         navigate('/register')
     };
