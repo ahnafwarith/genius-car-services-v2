@@ -33,7 +33,8 @@ const Register = () => {
                 <input type="text" name="name" id="" placeholder='Your name' />
                 <input type="email" name="email" id="" placeholder='Your email address' required />
                 <input type="password" name="password" id="" placeholder='password' required />
-                <input type="submit" value="Register" />
+                <input type="checkbox" name="terms" id="terms" />
+                <input className='w-50 mx-auto btn btn-primary' type="submit" value="Register" />
             </form>
             <p>Already Have an Account? <Link to='/login' className='text-danger text-decoration-none pe-auto' onClick={handleRegisterFromRegister}>Login</Link></p>
         </div>
