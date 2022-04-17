@@ -6,6 +6,7 @@ import './SocialLogin.css'
 import auth from '../../../firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -18,7 +19,9 @@ const SocialLogin = () => {
     if (error || error1) {
         errorMessage = <p className='text-danger text-center'>Error: {error?.message}{error1?.message}</p>
     }
-
+    if (loading || loading1) {
+        return <Loading></Loading>
+    }
     return (
         <div className='w-50 mx-auto'>
             {
