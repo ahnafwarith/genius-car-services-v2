@@ -10,6 +10,7 @@ import NotFound from './Pages/Shared/NotFound/NotFound';
 import Register from './Pages/Login/Register/Register'
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Checkout from './Pages/Checkout/Checkout';
+import AddUser from './Pages/AddUser/AddUser';
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
         <Route path="/checkout" element={
           <RequireAuth>
             <Checkout></Checkout>
+          </RequireAuth>
+        }></Route>
+        <Route path="/adduser" element={
+          <RequireAuth>
+            <AddUser></AddUser>
           </RequireAuth>
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>
