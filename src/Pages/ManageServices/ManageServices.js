@@ -6,7 +6,7 @@ const ManageServices = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm("Are you sure you want to delete?")
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`
+            const url = `http://localhost:5000/service/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -14,7 +14,7 @@ const ManageServices = () => {
                 .then(data => {
                     console.log(data);
                     const remaining = services.filter(service => service._id !== id);
-                    setServices(remaining);
+                    setServices(remaining)
                 })
         }
     }
@@ -23,8 +23,8 @@ const ManageServices = () => {
             <h3>Delete some services</h3>
             {
                 services.map(
-                    service =>
-                        <h5>{service.name}<button onClick={handleDelete}>Delete</button></h5>
+                    service => <div key={service._id}>
+                        <h5>{service.name}<button onClick={() => handleDelete(service._id)}>Delete</button></h5></div>
                 )
             }
         </div>
