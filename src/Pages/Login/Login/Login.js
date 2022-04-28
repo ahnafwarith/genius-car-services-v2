@@ -47,8 +47,6 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-
-
     const handleRegisterFromLogin = () => {
         navigate('/register')
     };
