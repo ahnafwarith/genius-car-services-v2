@@ -3,13 +3,23 @@ import { useParams } from 'react-router-dom';
 import GetServiceDetail from '../../CustomHooks/GetServiceDetail';
 
 const Checkout = () => {
-    const { serviceId } = useParams();
-    const [service] = GetServiceDetail(serviceId);
+    const { Id } = useParams();
+    const [service] = GetServiceDetail(Id);
     return (
-        <div>
-            <h1>Place order for:${service.name}</h1>
+        <div className='w-50 mx-auto'>
+            <h1>Place order for: {service.name}</h1>
             <form>
                 <input type="text" value="name" placeholder="name" required />
+                <br />
+                <input type="text" value="name" placeholder="name" required />
+                <br />
+                <input type="text" value="name" placeholder="name" required />
+                <br />
+                <input type="text" value="name" placeholder="name" required />
+                <br />
+                <input type="text" value="name" placeholder="name" required />
+                <br />
+                <input type="submit" value="Place Order" />
             </form>
         </div>
     );
