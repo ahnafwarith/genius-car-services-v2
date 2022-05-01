@@ -9,17 +9,17 @@ const Checkout = () => {
         <div className='w-50 mx-auto'>
             <h1>Place order for: {service.name}</h1>
             <form>
-                <input type="text" value="name" placeholder="name" required />
+                <input className='w-100 mb-2' type="text" placeholder="name" required />
                 <br />
-                <input type="text" value="name" placeholder="name" required />
+                <input className='w-100 mb-2' type="email" placeholder="email" required />
                 <br />
-                <input type="text" value="name" placeholder="name" required />
+                <input className='w-100 mb-2' value={service.name} type="text" placeholder="service" required />
                 <br />
-                <input type="text" value="name" placeholder="name" required />
+                <input className='w-100 mb-2' type="text" placeholder="address" required />
                 <br />
-                <input type="text" value="name" placeholder="name" required />
+                <input className='w-100 mb-2' type="text" placeholder="phone" required />
                 <br />
-                <input type="submit" value="Place Order" />
+                <input className='w-100 mb-2' type="submit" value="Place Order" />
             </form>
         </div>
     );
