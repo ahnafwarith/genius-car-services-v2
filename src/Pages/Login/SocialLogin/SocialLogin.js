@@ -5,16 +5,18 @@ import github from '../../../images/GitHub-Mark.png'
 import './SocialLogin.css'
 import auth from '../../../firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const navigate = useNavigate();
+    let location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     let errorMessage;
     if (user || user1) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     if (error || error1) {
         errorMessage = <p className='text-danger text-center'>Error: {error?.message}{error1?.message}</p>
