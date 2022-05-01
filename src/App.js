@@ -13,6 +13,7 @@ import Checkout from './Pages/Checkout/Checkout';
 import AddUser from './Pages/AddUser/AddUser';
 import ManageServices from './Pages/ManageServices/ManageServices';
 import { ToastContainer } from 'react-toastify';
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   return (
@@ -37,6 +38,11 @@ function App() {
         <Route path="/manageservices" element={
           <RequireAuth>
             <ManageServices></ManageServices>
+          </RequireAuth>
+        }></Route>
+        <Route path="/orders" element={
+          <RequireAuth>
+            <Orders></Orders>
           </RequireAuth>
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>

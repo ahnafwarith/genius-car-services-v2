@@ -33,9 +33,9 @@ const Checkout = () => {
         <div className='w-50 mx-auto'>
             <h1>Place order for: {service.name}</h1>
             <form onSubmit={handleFormSubmit}>
-                <input className='w-100 mb-2' value={user.displayName} type="text" placeholder="name" required disabled />
+                <input className='w-100 mb-2' value={user?.displayName} type="text" placeholder="name" required disabled />
                 <br />
-                <input className='w-100 mb-2' value={user.email} type="email" placeholder="email" required disabled />
+                <input className='w-100 mb-2' value={user?.email} type="email" placeholder="email" required disabled />
                 <br />
                 <input className='w-100 mb-2' value={service.name} type="text" placeholder="service" required />
                 <br />
